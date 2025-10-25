@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import CustomButton from './src/components/CustomButton';
+import CustomInput from './src/components/Custominput';
 
 export default function App() {
   return (
@@ -10,6 +11,11 @@ export default function App() {
 
       <StatusBar style="auto" />
       <CustomButton title="BOTONAZO" onPress={() => { } } variant={'Primary'}/>
+        <CustomInput
+        placeholder="Input de prueba"
+        onChange={(text) => { }}
+        type="text"
+      />
     </View>
   );
 }
