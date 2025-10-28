@@ -33,9 +33,12 @@ export default function CustomButton({title,onPress,variant = 'Primary'}: Props)
 const getStyles = (variant:'Primary'| 'Secondary' | 'Tertiary') => {
   return StyleSheet.create({
     button:{
+      alignItems: 'center',
+      padding: 10,
+      borderWidth: 1,
       borderColor: '#000000',
       borderRadius: 5,
-      padding: 10,
+
       backgroundColor: variant === 'Primary' ? '#523954' : variant === 'Secondary' ? '#206edbff' : '#ffffff',
     },
   buttonTitle:{
@@ -44,3 +47,5 @@ const getStyles = (variant:'Primary'| 'Secondary' | 'Tertiary') => {
   }
 });
 }
+
+//            <TouchableOpacity style={styles.button}onPress={(onPress)}>  

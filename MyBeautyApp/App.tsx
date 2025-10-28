@@ -2,34 +2,40 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import CustomButton from './src/components/CustomButton';
 import CustomInput from './src/components/Custominput';
+import { useState } from 'react';
 
 export default function App() {
+  const [email, setEmail] = useState('');
+
   return (
     <View style={styles.container}>
-      <Text style={styles.content}>Open up App.tsx to start working on your app!</Text>
-      <Text style={styles.content}>Probando el texto en pantalla</Text>
 
       <StatusBar style="auto" />
-      <CustomButton title="BOTONAZO" onPress={() => { } } variant={'Primary'}/>
         <CustomInput
-        placeholder="Input de prueba"
-        onChange={(text) => { }}
+        value={email}
+        placeholder="Correo Electrónico"
+        onChange={setEmail}
         type="text"
       />
+
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
+    // flex abilita uso de flexbox
     flex: 1,
-    backgroundColor: '#afa5a5ff',
+    //eje horizontal
     alignItems: 'center',
+    //eje vertical
     justifyContent: 'center',
-    padding: 16,
+    padding: 20,
+backgroundColor: 'gray',
+
   },
   content: {
-    fontSize: 30,
+    fontSize: 17,
     marginBottom: 8,
     textAlign: 'center',
   },
@@ -37,3 +43,6 @@ const styles = StyleSheet.create({
 
 
 
+//<CustomButton title="Ingresar" onPress={() => { } } variant={'Primary'}/>
+     // <Text style={styles.content}></Text>
+   //  <Text style={styles.content}></Text>

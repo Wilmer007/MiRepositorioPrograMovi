@@ -1,5 +1,5 @@
 
-import { View , TextInput, TouchableOpacity,Text,} from "react-native";
+import { View , TextInput, TouchableOpacity,Text,StyleSheet,} from "react-native";
 import { MaterialIcons, Ionicons } from "@expo/vector-icons";
 import { useState } from "react";
 
@@ -14,17 +14,17 @@ type Props = {
 
 
 function CustomInput({type, required,value,placeholder ,onChange}: Props) {
-const [isSecureText, setIsSecureText] = useState(type === 'password');
+const [isSecureText, setIsSecureText] = useState(type === 'email');
 
     const icon = type === 'email' ? 'email' : type === 'password' ? 'lock' : 'text-fields';
 
 return(
 //Wraper  
-<View> 
+<View style={styles.wrapper}> 
     // inputcontainer
-   <View>   
-    <MaterialIcons name={icon as any} size={24} color="black" />
-    <TextInput 
+   <View style={styles.inputContainer}>   
+    <MaterialIcons name={icon as any} size={20} color="black" />
+    <TextInput style={styles.input}
     placeholder={placeholder}
     value={value}
     onChangeText={onChange}
@@ -32,10 +32,10 @@ return(
     secureTextEntry={isSecureText}
     />
 
-<TouchableOpacity
+<TouchableOpacity style={{padding: 10}}
 onPress={() => setIsSecureText(!isSecureText)}>
-    <Text>Icons</Text>
-    <Ionicons name= {isSecureText ?  'eye' : 'eye-off'} size={24} color="black" />
+    <Text></Text>
+    <Ionicons name= {isSecureText ?  'eye' : 'eye-off'} size={20} color="black" />
 </TouchableOpacity>
    </View>
    
@@ -45,4 +45,25 @@ onPress={() => setIsSecureText(!isSecureText)}>
 
 }
 
+const styles = StyleSheet.create({
+
+    wrapper:
+    {
+    },
+    inputContainer:
+    {
+
+flexDirection: 'row',
+alignItems: 'center',
+borderWidth: 1,
+borderColor: '#ccc',
+borderRadius: 8,
+paddingHorizontal: 13,
+width: '80%',
+    },
+    input:{
+        paddingHorizontal: 15,
+        paddingVertical: 10,
+    }
+});
 export default CustomInput;
