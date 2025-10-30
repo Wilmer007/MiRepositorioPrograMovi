@@ -32,9 +32,8 @@ return(
     secureTextEntry={isSecureText}
     />
 
-<TouchableOpacity style={{padding: 10}}
+<TouchableOpacity style={{justifyContent: 'flex-end', paddingHorizontal: 10}}
 onPress={() => setIsSecureText(!isSecureText)}>
-    <Text></Text>
     <Ionicons name= {isSecureText ?  'eye' : 'eye-off'} size={20} color="black" />
 </TouchableOpacity>
    </View>
@@ -49,21 +48,33 @@ const styles = StyleSheet.create({
 
     wrapper:
     {
+        flexDirection: 'column',
+        justifyContent: 'flex-start',
+        marginBottom: 20,
+        marginLeft: 10,
     },
     inputContainer:
     {
 
 flexDirection: 'row',
+justifyContent: 'flex-start',
 alignItems: 'center',
-borderWidth: 1,
-borderColor: '#ccc',
-borderRadius: 8,
-paddingHorizontal: 13,
-width: '80%',
+paddingHorizontal: 10,
+paddingVertical: 5,
+marginTop: 5,
+marginBottom: 5,
+marginLeft: 20,
+
+borderWidth: 2,
+borderColor: '#111010ff',
+borderRadius: 15,
+
     },
     input:{
-        paddingHorizontal: 15,
-        paddingVertical: 10,
+        flexDirection: 'column',
+         justifyContent: 'flex-start',
+
+      
     }
 });
 export default CustomInput;

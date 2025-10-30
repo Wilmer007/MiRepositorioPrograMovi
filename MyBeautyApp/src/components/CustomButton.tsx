@@ -21,29 +21,41 @@ export default function CustomButton({title,onPress,variant = 'Primary'}: Props)
     const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#206edbff',
+    backgroundColor: '#f7380eff',
     alignItems: 'center',
     justifyContent: 'center',
+    
   },
   content:{
-    color: '#ffffff',
+    color: '#e91212ff',
   }
 });
 
 const getStyles = (variant:'Primary'| 'Secondary' | 'Tertiary') => {
   return StyleSheet.create({
     button:{
+      justifyContent: 'center',
       alignItems: 'center',
       padding: 10,
       borderWidth: 1,
       borderColor: '#000000',
       borderRadius: 5,
+      marginTop: 25,
+      marginLeft: 40,
+      marginRight: -40,
 
-      backgroundColor: variant === 'Primary' ? '#523954' : variant === 'Secondary' ? '#206edbff' : '#ffffff',
+      backgroundColor: variant === 'Primary' ? '#0c070cff' : variant === 'Secondary' ? '#6a99dcff' : '#ffffff',
     },
   buttonTitle:{
-    color: variant === 'Primary' ? '#cd7121ff' : variant === 'Secondary' ? 'rgba(50, 212, 50, 1)' : '#d2c617ff' ,   
+    color: variant === 'Primary' ? '#f6f4f2ff' : variant === 'Secondary' ? 'rgba(24, 25, 25, 1)' : '#d2c617ff' ,   
     fontWeight: 'bold',
+    flexDirection: 'row',
+justifyContent: 'flex-start',
+alignItems: 'center',
+    fontSize: 20,
+    marginLeft: -115,
+
+
   }
 });
 }
