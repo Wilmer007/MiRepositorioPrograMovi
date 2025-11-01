@@ -39,10 +39,10 @@ const getStyles = (variant:'Primary'| 'Secondary' | 'Tertiary') => {
       padding: 10,
       borderWidth: 1,
       borderColor: '#000000',
-      borderRadius: 5,
+      borderRadius: 10,
       marginTop: 25,
-      marginLeft: 40,
-      marginRight: -40,
+      marginLeft: 0,
+      marginRight: 0,
 
       backgroundColor: variant === 'Primary' ? '#0c070cff' : variant === 'Secondary' ? '#6a99dcff' : '#ffffff',
     },
@@ -53,7 +53,7 @@ const getStyles = (variant:'Primary'| 'Secondary' | 'Tertiary') => {
 justifyContent: 'flex-start',
 alignItems: 'center',
     fontSize: 20,
-    marginLeft: -115,
+    marginLeft: 0,
 
 
   }
