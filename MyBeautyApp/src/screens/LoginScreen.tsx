@@ -4,15 +4,15 @@ import CustomInput from "../components/Custominput";
 import CustomButton from "../components/CustomButton";
 import { StyleSheet } from "react-native";
 
-export default function LoginScreen(navigation: any) {
+export default function LoginScreen({navigation}: any) {
 
   const [email, setEmail] = useState('');
 
-  const hangleLogin = () => {
+  const handleLogin = () => {
     try {
-    navigation.navigate('Home', { email: email });
+    navigation.navigate('Tabs');
     } catch (error) {
-      Alert.alert('Error al iniciar sesión')
+      console.log(error);
     }
   }
 
@@ -33,8 +33,14 @@ export default function LoginScreen(navigation: any) {
         type="email"
       />
 
+<CustomButton title={'Iniciar Sesion'} 
+        onPress={handleLogin}>
+          </CustomButton>
+
       </View>
       <CustomButton title="Ingresar" onPress={() => { } } variant={'Primary'}/>
+
+
 
         
       <CustomButton title="Registrarse" onPress={() => { } } variant={'Secondary'}/>
