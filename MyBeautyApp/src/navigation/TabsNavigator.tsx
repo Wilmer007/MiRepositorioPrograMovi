@@ -4,7 +4,7 @@ import ProfileScreen from "../screens/ProfileScreen";
 import HomeScreen from "../screens/HomeSreen";
 
 export type TabsParamList = {
-Home: undefined;
+Home: {newItem? : string} | undefined;
 Profile: undefined;
 };
 

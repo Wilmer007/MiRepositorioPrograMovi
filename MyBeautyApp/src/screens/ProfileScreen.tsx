@@ -3,7 +3,6 @@ import CustomButton from "../components/CustomButton";
 import { navigationRef } from "../navigation/NavigationService";
 import LoginScreen from "./LoginScreen";
 
-
 export default function ProfileScreen({navigation}: any) {
 
     const handleLogout = () => {
@@ -13,7 +12,7 @@ export default function ProfileScreen({navigation}: any) {
                 // indica la vista actual al momento de reiniciar el stack 
                 index:0,
                 // es un array de objetos , cada uno de estos representa cada ruta
-                routes: [{name: 'Login'}]
+                routes: [{name: 'Login'}],
             })
         }
     }
