@@ -2,12 +2,16 @@ import { View ,Text} from "react-native";
 import CustomButton from "../components/CustomButton";
 import { navigationRef } from "../navigation/NavigationService";
 import LoginScreen from "./LoginScreen";
+import { useAuth } from "../contexts/AuthContext";
 
 export default function ProfileScreen({navigation}: any) {
 
+    const {LogOut}= useAuth();
+    
     const handleLogout = () => {
         
         if (navigationRef.isReady()){
+
             navigationRef.reset({
                 // indica la vista actual al momento de reiniciar el stack 
                 index:0,
@@ -23,8 +27,10 @@ export default function ProfileScreen({navigation}: any) {
             <CustomButton title={'Cerrar sesion'} onPress={handleLogout}>
             </CustomButton>
             <CustomButton title='iR AL LOGIN'
-            onPress={() =>
-                navigation.navigate('Login')}/>
+            onPress={() =>{
+                LogOut();
+                navigation.navigate('Login');
+            }}/>
             
         </View>
     )
